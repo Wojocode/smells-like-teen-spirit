@@ -1,0 +1,135 @@
+/* ### Primary
+
+- Dark cyan: hsl(158, 36%, 37%)
+- Cream: hsl(30, 38%, 92%)
+
+### Neutral
+
+- Very dark blue: hsl(212, 21%, 14%)
+- Dark grayish blue: hsl(228, 12%, 48%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 14px
+
+### Font
+
+- Family: [Montserrat](https://fonts.google.com/specimen/Montserrat)
+- Weights: 500, 700
+
+- Family: [Fraunces](https://fonts.google.com/specimen/Fraunces)
+- Weights: 700
+*/
+
+:root{
+    --dark_green:hsl(158, 36%, 37%);
+    --cream_background:hsl(30, 38%, 92%);
+    --hover_button_color:hsl(212, 21%, 14%);
+    --paragraph_color:hsl(228, 12%, 48%);
+    --card_color:hsl(0, 0%, 100%);
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: var(--cream_background);
+    font-family: 'Montserrat', sans-serif;
+    font-size:14px;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+p:first-of-type{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+p{
+    color:var(--paragraph_color);
+    line-height:20px;
+    word-spacing: 3px;
+}
+.prices{
+    color:var(--dark_green);
+    display:flex;
+    align-items: center;
+}
+.prices span{
+    color:var(--paragraph_color);
+    margin-left:15px;
+    font-family: 'Montserrat', sans-serif;
+}
+h1, .prices{
+    font-family: 'Fraunces', serif;
+}
+button{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    color:var(--card_color);
+    border:none;
+    outline: none;
+    background-color: var(--dark_green);
+    width:100%;
+    border-radius:10px;
+    height:45px;
+    font-weight: 600;
+    font-size:102%;
+    transition: background-color 0.2s ease-in;
+    cursor: pointer;
+}
+button span{
+    margin-left:8px;
+}
+.container{
+    width:600px;
+    height:450px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: var(--card_color);
+    border-radius:0 12px 12px 0;
+}
+.left{
+    height:100%;
+    background: url(images/image-product-desktop.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius:12px 0 0 12px;
+}
+
+.right{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:100%;
+    padding:6px 40px;
+}
+button:hover{
+    background-color: var(--hover_button_color);
+}
+h1{
+    font-size:30px;
+}
+
+@media screen and (max-width:630px){
+    .container{
+        height:90%;
+        width:80%;
+        margin:10px auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.35fr;
+        border-radius:10px;
+    }
+    .left{
+     
+        border-radius:10px 10px 0 0;
+        background: url(images/image-product-mobile.jpg);
+        background-size: cover;
+    }
+}
